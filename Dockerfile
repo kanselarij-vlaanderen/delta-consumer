@@ -1,2 +1,2 @@
-FROM semtech/mu-javascript-template:feature-config-overwrites-other-known-extensions
-LABEL maintainer="Redpencil <info@redpencil.io>"
+FROM semtech/mu-javascript-template:1.9.1
+LABEL maintainer="redpencil.io <info@redpencil.io>"
