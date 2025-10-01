@@ -2,20 +2,17 @@
   "name": "delta-consumer",
   "version": "0.0.6",
   "description": "Customizable consumer service to synchronise data from a producer stack",
+  "type": "module",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lblod/delta-consumer.git"
+    "url": "git+https://github.com/kanselarij-vlaanderen/delta-consumer.git"
   },
   "author": "info@redpencil.io",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lblod/delta-consumer/issues"
-  },
-  "homepage": "https://github.com/lblod/delta-consumer#readme",
   "dependencies": {
     "@lblod/mu-auth-sudo": "0.5.1",
     "cron": "^1.8.2",
