@@ -52,6 +52,7 @@ async function downloadFile(uri: string) {
   console.log(`Downloading file ${uri} from ${downloadUrl}`);
   const response = await fetcher(downloadUrl);
   if (response.ok) {
+    fs.mkdirSync(path.dirname(filePath), { recursive: true });
     const writeStream = fs.createWriteStream(filePath);
     await finished(Readable.fromWeb(response.body).pipe(writeStream));
   } else {
