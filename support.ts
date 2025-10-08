@@ -1,5 +1,4 @@
-import fs from 'fs-extra';
-import { Response } from 'node-fetch';
+import fs from 'node:fs/promises';
 import fetcher from './lib/fetcher';
 import { sparqlEscapeUri, sparqlEscapeString } from 'mu';
 import { Quad, Literal, Resource, ChangeSet } from './types';
@@ -30,7 +29,7 @@ export async function downloadFile(uri: string) {
   const response = await fetcher(downloadUrl)
   if (response.ok) {
     const buffer = await response.buffer();
-    fs.writeFileSync(filePath, buffer);
+    await fs.writeFile(filePath, buffer);
   } else {
     console.error(`Failed to download file ${uri} (${response.status})`);
   }
