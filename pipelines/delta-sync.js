@@ -11,7 +11,7 @@ import DeltaFile from '../lib/delta-file';
 import { getNextDeltaTimestamp } from "../lib/delta-sync-job";
 import { createDeltaSyncTask } from '../lib/delta-sync-task';
 import { createError, createJobError } from '../lib/error';
-import { createJob, failJob, getJobs, getLatestJobForOperation } from '../lib/job';
+import { createJob, failJob, getLatestJobForOperation } from '../lib/job';
 import { updateStatus } from '../lib/utils';
 
 /**
@@ -79,7 +79,7 @@ async function runDeltaSync() {
 
       let previousTask;
       for(const [ index, deltaFile ] of sortedDeltaFiles.entries()) {
-        console.log(`Ingesting deltafile created on ${deltaFile.created}`);
+        console.log(`Ingesting delta file created on ${deltaFile.created}`);
 
         const task = await createDeltaSyncTask(JOBS_GRAPH, job, `${index}`, STATUS_BUSY, deltaFile, previousTask);
         previousTask = task;
@@ -113,10 +113,10 @@ async function runDeltaSync() {
           await dispatch(changesets);
 
           await updateStatus(task, STATUS_SUCCESS);
-          console.log(`Sucessfully ingested deltafile created on ${deltaFile.created}`);
+          console.log(`Sucessfully ingested delta file created on ${deltaFile.created}`);
         }
         catch(e){
-          console.error(`Something went wrong while ingesting deltafile created on ${deltaFile.created}`);
+          console.error(`Something went wrong while ingesting delta file created on ${deltaFile.created}`);
           console.error(e);
           await updateStatus(task, STATUS_FAILED);
           throw e;
