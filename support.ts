@@ -1,8 +1,7 @@
 import fs from 'node:fs/promises';
 import fetcher from './lib/fetcher';
-import { sparqlEscapeUri, sparqlEscapeString } from 'mu';
+import { update, sparqlEscapeUri, sparqlEscapeString } from 'mu';
 import { Quad, Literal, Resource, ChangeSet } from './types';
-import { updateSudo as update } from '@lblod/mu-auth-sudo';
 import { SYNC_FILESHARE_ENDPOINT } from './cfg';
 
 export function toSparqlTerm(thing: Literal | Resource): string {
@@ -84,7 +83,7 @@ export async function moveTriples(changesets: ChangeSet[]) {
             GRAPH ${toSparqlTerm(graph)} {
               ${quads.map(toSparqlTriple).join("\n")}
             }
-          }`);
+          }`, { sudo: true });
       }
     }
     if (inserts.length) {
@@ -93,7 +92,7 @@ export async function moveTriples(changesets: ChangeSet[]) {
             GRAPH ${toSparqlTerm(graph)} {
               ${quads.map(toSparqlTriple).join("\n")}
             }
-          }`);
+          }`, { sudo: true });
       }
     }
   }

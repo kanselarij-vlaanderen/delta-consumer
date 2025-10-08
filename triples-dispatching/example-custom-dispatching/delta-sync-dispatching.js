@@ -1,6 +1,6 @@
 /**
  * Dispatch the fetched information to a target graph.
- * @param { mu, muAuthSudo } lib - The provided libraries from the host service.
+ * @param { mu } lib - The provided libraries from the host service.
  * @param { termObjectChangeSets: { deletes, inserts } } data - The fetched changes sets, which objects of serialized Terms
  *          [ {
  *              graph: "<http://foo>",
@@ -12,7 +12,7 @@
  * @return {void} Nothing
  */
 async function dispatch(lib, data){
-  const { mu, muAuthSudo } = lib;
+  const { mu } = lib;
   const { termObjectChangeSets } =  data;
 
   console.log(`Found an amount of ${termObjectChangeSets.length} changesets`);
