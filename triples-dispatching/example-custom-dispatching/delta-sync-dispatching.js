@@ -28,6 +28,4 @@ async function dispatch(lib, data){
   console.log(`All changeSets were logged, waiting for next update!`);
 }
 
-module.exports = {
-  dispatch
-};
+export default dispatch;

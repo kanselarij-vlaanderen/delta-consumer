@@ -23,6 +23,4 @@ async function dispatch(lib, data){
   console.log(`All triples were logged`);
 }
 
-module.exports = {
-  dispatch
-};
+export default dispatch;
