@@ -54,3 +54,5 @@ const DCR_SYNC_LOGIN_PATH = process.env.DCR_SYNC_LOGIN_PATH || '/sync/login';
 export const SECRET_KEY = process.env.DCR_SECRET_KEY;
 export const SYNC_LOGIN_ENDPOINT = `${SYNC_BASE_URL}${DCR_SYNC_LOGIN_PATH}`;
 
+// DEBUG
+export const DEBUG_FETCHER = process.env.DEBUG_FETCHER == 'true';
