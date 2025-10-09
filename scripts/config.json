@@ -1,0 +1,20 @@
+{
+  "version": "0.2",
+  "scripts": [
+    {
+      "documentation": {
+        "command": "migrate-data",
+        "description": "Migrate the structure of the delta files to subfolders per day",
+        "arguments": []
+      },
+      "environment": {
+        "interactive": false,
+        "join_networks": true,
+        "script": "migrate-data/run.js"
+      },
+      "mounts": {
+        "app": "/data/app/"
+      }
+    }
+  ]
+}
