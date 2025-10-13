@@ -1,6 +1,6 @@
 {
   "name": "delta-consumer",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Customizable consumer service to synchronise data from a producer stack",
   "type": "module",
   "main": "app.js",
