@@ -8,7 +8,7 @@ Add the following to your `docker-compose.yml`:
 ```yaml
 services:
   delta-consumer:
-    image: kanselarij/delta-consumer:0.1.0
+    image: kanselarij/delta-consumer:0.1.1
     environment:
       ALLOW_MU_AUTH_SUDO: "true"
       DCR_SYNC_BASE_URL: "https://kaleidos.vlaanderen.be"
